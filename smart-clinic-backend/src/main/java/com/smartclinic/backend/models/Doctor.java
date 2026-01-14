@@ -1,4 +1,4 @@
-package com.project.back_end.models;
+package com.smartclinic.backend.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
