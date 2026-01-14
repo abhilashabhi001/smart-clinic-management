@@ -1,0 +1,263 @@
+/* =========================
+   Global Reset & Base Styles
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+
+/* =========================
+   Wrapper Layout
+   ========================= */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   Header Styles
+   ========================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header img {
+    height: 40px;
+}
+
+.header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header nav a:hover {
+    color: #1976d2;
+}
+
+/* =========================
+   Main Content Area
+   ========================= */
+.main-content {
+    flex: 1;
+    background-image: url("../images/defineRole/index.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* =========================
+   Headings
+   ========================= */
+.main-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   Role Buttons
+   ========================= */
+.role-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.role-buttons button {
+    background-color: #1976d2;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-buttons button:hover {
+    background-color: #125aa0;
+    transform: translateY(-2px);
+}
+
+/* Dashboard-style button (reusable) */
+.dashboard-btn {
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dashboard-btn:hover {
+    background-color: #1b5e20;
+}
+
+/* =========================
+   Modal Styles
+   ========================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Close button */
+#closeModal,
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+#closeModal:hover,
+.close:hover {
+    color: #d32f2f;
+}
+
+/* =========================
+   Form & Input Styles
+   ========================= */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #1976d2;
+}
+
+.select-dropdown {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+/* =========================
+   Footer Styles
+   ========================= */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================
+   Interactive Elements
+   ========================= */
+button:focus,
+input:focus,
+select:focus {
+    outline: none;
+}
+
+button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .main-content h2 {
+        font-size: 26px;
+    }
+
+    .role-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .role-buttons button {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

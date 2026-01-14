@@ -1,0 +1,198 @@
+/* =========================
+   Reset & Base Styles
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+
+/* =========================
+   Layout
+========================= */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #ffffff;
+}
+
+/* =========================
+   Headings
+========================= */
+.main-content h2 {
+    text-align: center;
+    color: #015c5d;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   Search & Filter Section
+========================= */
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+#searchBar {
+    width: 60%;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input-field {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #015c5d;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #017d7e;
+}
+
+/* =========================
+   Table Styling
+========================= */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background: rgba(1, 92, 93, 0.9);
+    color: #ffffff;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafa;
+}
+
+tbody tr:hover {
+    background-color: #eef7f7;
+}
+
+tbody td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* =========================
+   Prescription Button
+========================= */
+.prescription-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #015c5d;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.prescription-btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* =========================
+   Empty State
+========================= */
+.noPatientRecord {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    padding: 20px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    #searchBar {
+        width: 100%;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    table th,
+    table td {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .main-content h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content h2 {
+        font-size: 20px;
+    }
+
+    .button,
+    .input-field {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+}

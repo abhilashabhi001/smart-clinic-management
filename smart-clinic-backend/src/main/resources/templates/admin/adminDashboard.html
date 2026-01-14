@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <!-- Page-specific & global CSS -->
+    <link rel="stylesheet" th:href="@{/assets/css/adminDashboard.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+
+    <!-- Utility & render scripts -->
+    <script th:src="@{/js/render.js}" defer></script>
+    <script th:src="@{/js/util.js}" defer></script>
+
+    <!-- Layout components -->
+    <script th:src="@{/js/components/header.js}" defer></script>
+    <script th:src="@{/js/components/footer.js}" defer></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="wrapper">
+
+        <!-- Dynamic Header -->
+        <div id="header"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Page Title -->
+            <h2>Admin Dashboard</h2>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input
+                        type="text"
+                        id="searchBar"
+                        placeholder="Search by doctor name"
+                        class="input-field"
+                />
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-container">
+                <select id="timeFilter" class="select-dropdown">
+                    <option value="">Sort by Time</option>
+                    <option value="asc">Oldest First</option>
+                    <option value="desc">Newest First</option>
+                </select>
+
+                <select id="specialtyFilter" class="select-dropdown">
+                    <option value="">Filter by Specialty</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="neurology">Neurology</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Doctor Cards -->
+            <div id="content" class="doctor-list">
+                <!-- doctorCard.js injects content here -->
+            </div>
+
+        </main>
+
+        <!-- Dynamic Footer -->
+        <div id="footer"></div>
+    </div>
+</div>
+
+<!-- Modal for Add Doctor -->
+<div id="modal" class="modal hidden">
+    <span id="closeModal" class="close">&times;</span>
+    <div id="modal-body"></div>
+</div>
+
+<!-- Page Logic -->
+<script type="module" th:src="@{/js/adminDashboard.js}" defer></script>
+<script type="module" th:src="@{/js/components/doctorCard.js}" defer></script>
+
+</body>
+</html>
