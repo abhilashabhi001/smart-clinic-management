@@ -1,8 +1,6 @@
 /* ===============================
    Role-Based Login Handling
 ================================ */
-
-import { openModal } from "../components/modals.js";
 import { API_BASE_URL } from "../config/config.js";
 
 /* -------------------------------

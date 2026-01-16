@@ -2,7 +2,7 @@
    Modal Component
 ================================ */
 
-export function openModal(type) {
+window.openModal = function (type) {
   const modal = document.getElementById("modal");
   const modalBody = document.getElementById("modal-body");
   const closeBtn = document.getElementById("closeModal");
