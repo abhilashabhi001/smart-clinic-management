@@ -1,36 +1,33 @@
 package com.smartclinic.backend.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import com.smartclinic.backend.auth.service.JwtService;
+import io.jsonwebtoken.Claims;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @Service
 public class TokenValidationService {
 
-    /**
-     * Validates JWT token and role
-     * @param token JWT token
-     * @param role expected role (admin / doctor)
-     * @return empty map if valid, error map if invalid
-     */
+    @Autowired
+    private JwtService jwtService;
+
     public Map<String, String> validateToken(String token, String role) {
+        try {
+            if (!jwtService.validateToken(token)) {
+                throw new RuntimeException("Invalid token");
+            }
 
-        Map<String, String> errorMap = new HashMap<>();
+            Claims claims = jwtService.extractClaims(token);
+            String tokenRole = claims.get("role", String.class);
 
-        // 🔹 Basic validation (replace with real JWT logic later)
-        if (token == null || token.isBlank()) {
-            errorMap.put("error", "Token is missing");
-            return errorMap;
+            if (!role.equalsIgnoreCase(tokenRole)) {
+                return Map.of("error", "Invalid role");
+            }
+            return Map.of(); // valid
+        } catch (Exception e) {
+            return Map.of("error", "Invalid token");
         }
-
-        // 🔹 Example role validation placeholder
-        if (!role.equals("admin") && !role.equals("doctor")) {
-            errorMap.put("error", "Invalid role");
-            return errorMap;
-        }
-
-        // ✅ Token accepted (LAB MODE)
-        return errorMap; // empty map = valid
     }
 }

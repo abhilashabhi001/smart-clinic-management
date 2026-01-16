@@ -31,6 +31,10 @@ public class Admin {
         return username;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }

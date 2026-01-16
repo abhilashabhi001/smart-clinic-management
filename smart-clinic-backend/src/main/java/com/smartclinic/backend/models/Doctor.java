@@ -58,6 +58,10 @@ public class Doctor {
         return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public String getPhone() {
         return phone;
     }
