@@ -1,9 +1,9 @@
 package com.smartclinic.backend.auth.service;
 
 import com.smartclinic.backend.models.Doctor;
-import com.smartclinic.backend.auth.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.smartclinic.backend.auth.repository.DoctorRepository;
 
 @Service
 public class DoctorAuthService {
