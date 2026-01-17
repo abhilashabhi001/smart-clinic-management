@@ -1,11 +1,11 @@
-name: Docker CI
+name: Dockerfile Lint
 
 on:
   push:
   pull_request:
 
 jobs:
-  lint-dockerfile:
+  docker-lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,4 +15,4 @@ jobs:
       - name: Lint Dockerfile with Hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: Dockerfile
+          dockerfile: smart-clinic-backend/Dockerfile
